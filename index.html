@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#090b10">
+  <meta name="description" content="저지먼트 세계관의 소속별 ID 카드를 제작하고 PNG로 저장하세요.">
+  <title>IDENTITY ARCHIVE — ID 카드 제작</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%23090b10'/%3E%3Cpath d='M13 15h38v34H13z' fill='none' stroke='%23c3a978' stroke-width='3'/%3E%3Cpath d='M22 25h20M22 32h15M22 39h20' stroke='%23c3a978' stroke-width='3'/%3E%3C/svg%3E">
+  <style>
+    :root{color-scheme:dark;font-family:Arial,'Noto Sans KR',sans-serif;background:#090b10;color:#e9e9e8;font-size:16px}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 75% 0%,#1b2029 0,transparent 50%),#090b10}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #dabf8a;outline-offset:3px}
+    .shell{max-width:1470px;margin:auto;padding:30px clamp(18px,3vw,52px) 48px}.top{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #323640;padding-bottom:24px;gap:20px}.brand{font-family:Georgia,serif;letter-spacing:.18em;font-size:clamp(20px,2vw,29px);color:#e8e0d0}.brand small{display:block;font:12px Arial,sans-serif;letter-spacing:.28em;color:#898f9a;margin-bottom:8px}.top-note{font-size:13px;letter-spacing:.14em;color:#87909d}.section-label{font-size:13px;color:#9a9fa9;letter-spacing:.18em;margin:30px 0 15px}.factions{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.faction{min-height:76px;text-align:left;border:1px solid #333741;background:#11151d;color:#a9afb8;padding:16px 18px;transition:border-color .2s,background .2s,transform .2s}.faction:hover{transform:translateY(-2px);border-color:#777}.faction[aria-pressed=true]{border-color:var(--accent);background:linear-gradient(120deg,var(--wash),#12151c);color:#f5f2eb}.faction .num{display:block;color:var(--accent);font-size:12px;letter-spacing:.15em;margin-bottom:7px}.faction strong{font-weight:500;letter-spacing:.1em}
+    .workspace{display:grid;grid-template-columns:minmax(330px,.88fr) minmax(470px,1.12fr);gap:24px;margin-top:25px;align-items:start}.panel{background:#101319;border:1px solid #30343c}.panel-head{padding:22px 25px;border-bottom:1px solid #30343c;display:flex;align-items:center;justify-content:space-between;gap:15px}.panel-head h1,.panel-head h2{font-size:17px;font-weight:500;letter-spacing:.06em;margin:0}.panel-head span{font-size:12px;letter-spacing:.13em;color:#858e9b}.form{padding:23px 25px 26px}.upload{display:flex;align-items:center;gap:15px;min-height:100px;border:1px dashed #646975;padding:13px;cursor:pointer;margin-bottom:22px}.upload:hover{border-color:var(--accent)}.upload img{width:70px;height:70px;object-fit:cover;background:#242b34}.upload b{display:block;font-size:14px;font-weight:500}.upload small{display:block;color:#929aa5;font-size:12px;line-height:1.5;margin-top:6px}.upload input{position:absolute;width:1px;height:1px;opacity:0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 15px}.field{display:flex;flex-direction:column;gap:8px;min-width:0}.field.full{grid-column:1/-1}.field label{font-size:13px;color:#b4bac2;letter-spacing:.04em}.field input,.field select{width:100%;height:45px;border:1px solid #3a404a;border-radius:0;background:#191e26;color:#f1f1f0;padding:0 12px;outline:none}.field input:focus,.field select:focus{border-color:var(--accent)}.field input::placeholder{color:#737b87}.hint{font-size:12px;line-height:1.5;color:#7f8791;margin:19px 0 0}
+    .preview-panel{position:sticky;top:24px}.preview-wrap{padding:clamp(15px,2.5vw,32px);background:radial-gradient(circle at 50% 40%,#252a31,#151920 70%);display:grid;place-items:center;min-height:440px}.preview-wrap canvas{width:100%;max-width:720px;height:auto;display:block;box-shadow:0 30px 60px #0008}.actions{padding:19px 25px;display:flex;align-items:center;gap:18px;border-top:1px solid #30343c}.download{background:var(--accent);border:1px solid var(--accent);color:#101114;min-height:48px;padding:0 23px;font-weight:bold;letter-spacing:.06em}.download:hover{filter:brightness(1.12)}.actions span{color:#969da6;font-size:12px;line-height:1.4}.footer{color:#6e7680;font-size:12px;letter-spacing:.08em;margin-top:28px}
+    @media(max-width:900px){.workspace{grid-template-columns:1fr}.preview-panel{position:static}.preview-wrap{min-height:0}.top-note{display:none}}@media(max-width:560px){.shell{padding-top:22px}.factions{grid-template-columns:repeat(2,1fr)}.faction{min-height:68px}.panel-head,.form,.actions{padding-left:17px;padding-right:17px}.preview-wrap{padding:12px}.grid{gap:14px 10px}.field input,.field select{font-size:16px}.actions{flex-wrap:wrap}.actions span{flex-basis:100%}}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="top"><div class="brand"><small>PERSONNEL RECORD SYSTEM</small>IDENTITY ARCHIVE</div><div class="top-note">ID CARD CREATOR · 2053</div></header>
+  <div class="section-label">01 / 소속 선택</div>
+  <nav class="factions" aria-label="소속 선택">
+    <button class="faction" type="button" data-faction="judgment" aria-pressed="true"><span class="num">01 / JSC</span><strong>저지먼트</strong></button>
+    <button class="faction" type="button" data-faction="genesis" aria-pressed="false"><span class="num">02 / GE</span><strong>제네시스</strong></button>
+    <button class="faction" type="button" data-faction="neutral" aria-pressed="false"><span class="num">03 / NTR</span><strong>중립</strong></button>
+    <button class="faction" type="button" data-faction="independent" aria-pressed="false"><span class="num">04 / IND</span><strong>무소속</strong></button>
+  </nav>
+  <div class="workspace">
+    <section class="panel" aria-labelledby="edit-title"><div class="panel-head"><h1 id="edit-title">카드 정보</h1><span>PERSONNEL DATA</span></div><div class="form">
+      <label class="upload" for="portrait"><img id="thumb" alt="선택한 프로필 사진 미리보기" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='70' height='70' viewBox='0 0 70 70'%3E%3Crect width='70' height='70' fill='%23242b34'/%3E%3Ccircle cx='35' cy='27' r='10' fill='%2389919e'/%3E%3Cpath d='M15 62c2-23 38-23 40 0' fill='%2389919e'/%3E%3C/svg%3E"><span><b>프로필 이미지 선택</b><small>사진을 선택하면 카드에 바로 반영됩니다<br>JPG · PNG · WEBP</small></span><input id="portrait" type="file" accept="image/png,image/jpeg,image/webp"></label>
+      <div class="grid">
+        <div class="field"><label for="codename">코드네임</label><input id="codename" maxlength="28" value="HALO" placeholder="코드네임"></div>
+        <div class="field"><label for="name">이름</label><input id="name" maxlength="24" value="헤일로" placeholder="이름"></div>
+        <div class="field"><label for="rank">등급</label><select id="rank"><option>SS</option><option>S</option><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option><option>일반인</option><option>미상</option></select></div>
+        <div class="field"><label for="class">계열</label><input id="class" maxlength="20" value="신성계" placeholder="계열 / 능력"></div>
+        <div class="field"><label for="role">분류 · 역할</label><input id="role" maxlength="24" value="센티넬 · 센터장" placeholder="센티넬 / 가이드"></div>
+        <div class="field"><label for="unit">팀 · 부서</label><input id="unit" maxlength="24" value="COMMAND" placeholder="ALPHA TEAM"></div>
+        <div class="field full"><label for="serial">식별 번호</label><input id="serial" maxlength="26" value="JSC-2053-001" placeholder="JSC-2053-001"></div>
+      </div><p class="hint">입력한 내용과 사진은 이 브라우저에서만 처리됩니다. 카드 이미지는 아래에서 PNG로 저장할 수 있습니다.</p>
+    </div></section>
+    <section class="panel preview-panel" aria-labelledby="preview-title"><div class="panel-head"><h2 id="preview-title">실시간 미리보기</h2><span id="style-label">JUDGMENT / GOLD</span></div><div class="preview-wrap"><canvas id="card" width="1200" height="760" role="img" aria-label="입력 내용이 반영된 ID 카드 미리보기"></canvas></div><div class="actions"><button id="download" type="button" class="download">PNG로 저장 ↓</button><span>1200 × 760 px · 고화질 이미지</span></div></section>
+  </div><div class="footer">IDENTITY ARCHIVE © 2053 · PERSONNEL IDENTIFICATION</div>
+</main>
+<script>
+(()=>{
+  const themes={judgment:{ko:'저지먼트',en:'JUDGMENT SENTINEL COMMAND',short:'JSC',accent:'#c8ab76',wash:'#2d281e',number:'01',motto:'ORDER AT THE EDGE OF DISASTER'},genesis:{ko:'제네시스',en:'GENESIS ERROR',short:'GE',accent:'#dc6868',wash:'#301d22',number:'02',motto:'RESTRICTED EXPERIMENTAL RECORD'},neutral:{ko:'중립',en:'NEUTRAL AFFILIATION',short:'NTR',accent:'#83b9bc',wash:'#193038',number:'03',motto:'INDEPENDENT OBSERVATION RECORD'},independent:{ko:'무소속',en:'UNAFFILIATED',short:'IND',accent:'#a9a9d4',wash:'#26263b',number:'04',motto:'NO REGISTERED COMMAND'}};
+  const ids=['codename','name','rank','class','role','unit','serial'];const fields=Object.fromEntries(ids.map(id=>[id,document.getElementById(id)]));const canvas=document.getElementById('card'),ctx=canvas.getContext('2d');let faction='judgment',photo=null;
+  function fit(s,max,width,font){let v=String(s||'—');while(v.length>1&&ctx.measureText(v).width>width)v=v.slice(0,-2)+'…';return v}
+  function label(t,x,y,size=22,color='#fff',font='Arial',weight='normal'){ctx.fillStyle=color;ctx.font=`${weight} ${size}px ${font}`;ctx.fillText(t,x,y)}
+  function line(x,y,x2,y2,color,width=1){ctx.strokeStyle=color;ctx.lineWidth=width;ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x2,y2);ctx.stroke()}
+  function draw(){const t=themes[faction],v=Object.fromEntries(ids.map(id=>[id,fields[id].value.trim()]));ctx.clearRect(0,0,1200,760);
+    const bg=ctx.createLinearGradient(0,0,1200,760);bg.addColorStop(0,'#191e26');bg.addColorStop(.58,'#10141b');bg.addColorStop(1,t.wash);ctx.fillStyle=bg;ctx.fillRect(0,0,1200,760);
+    ctx.save();ctx.globalAlpha=.085;ctx.strokeStyle=t.accent;ctx.lineWidth=1;for(let x=-700;x<1500;x+=25){line(x,0,x+760,760,t.accent)}ctx.restore();
+    ctx.strokeStyle=t.accent;ctx.lineWidth=3;ctx.strokeRect(24,24,1152,712);ctx.strokeStyle='#ffffff28';ctx.lineWidth=1;ctx.strokeRect(36,36,1128,688);
+    ctx.fillStyle=t.accent;ctx.fillRect(24,24,10,128);ctx.fillRect(24,24,220,6);ctx.fillRect(1166,608,10,128);ctx.fillRect(978,730,198,6);
+    label('IDENTITY  /  PERSONNEL RECORD',70,91,22,t.accent,'Arial','bold');label('2053  ·  '+t.short,1040,91,19,'#c5c8cd');line(70,117,1130,117,'#ffffff36');
+    ctx.fillStyle='#0a0e14';ctx.fillRect(70,160,382,446);ctx.strokeStyle=t.accent;ctx.lineWidth=2;ctx.strokeRect(70,160,382,446);
+    ctx.save();ctx.beginPath();ctx.rect(76,166,370,434);ctx.clip();if(photo){const iw=photo.naturalWidth||photo.width,ih=photo.naturalHeight||photo.height,scale=Math.max(370/iw,434/ih),w=iw*scale,h=ih*scale;ctx.drawImage(photo,76+(370-w)/2,166+(434-h)/2,w,h)}else{const g=ctx.createLinearGradient(76,166,446,600);g.addColorStop(0,'#26303c');g.addColorStop(1,t.wash);ctx.fillStyle=g;ctx.fillRect(76,166,370,434);ctx.strokeStyle=t.accent+'55';ctx.lineWidth=2;ctx.beginPath();ctx.arc(261,335,77,0,Math.PI*2);ctx.stroke();ctx.beginPath();ctx.arc(261,335,53,0,Math.PI*2);ctx.stroke();line(167,461,355,461,t.accent+'66');label('IMAGE  /  NO DATA',145,522,18,'#a6abb4')}ctx.restore();
+    ctx.fillStyle='#0b0d12cc';ctx.fillRect(76,554,370,46);label(t.short+'  /  IDENTITY',92,584,18,t.accent,'Arial','bold');
+    label(t.en,500,192,24,t.accent,'Arial','bold');line(500,213,1129,213,t.accent,2);label(fit(v.codename,28,620),500,287,59,'#f5f4f1','Arial','bold');label(fit(v.name,24,560),503,336,28,'#d7d9dd');
+    line(500,369,1129,369,'#ffffff42');label('RANK',502,408,17,'#89929e');label('CLASS',685,408,17,'#89929e');label('ROLE',502,502,17,'#89929e');label('UNIT / DIVISION',800,502,17,'#89929e');
+    label(fit(v.rank,12,160),502,450,30,t.accent,'Arial','bold');label(fit(v.class,20,410),685,450,27,'#e9e9e8');label(fit(v.role,24,280),502,544,24,'#e9e9e8');label(fit(v.unit,24,325),800,544,24,'#e9e9e8');
+    line(70,641,1130,641,'#ffffff46');label('SERIAL NO.',70,681,17,'#939ba6');label(fit(v.serial,26,435),216,681,22,'#e4e5e5','Arial','bold');label('AUTHORIZED  /  '+t.number,920,682,17,t.accent,'Arial','bold');label(t.motto,70,715,14,'#9298a1');
+  }
+  document.querySelectorAll('.faction').forEach(b=>b.addEventListener('click',()=>{faction=b.dataset.faction;const t=themes[faction];document.documentElement.style.setProperty('--accent',t.accent);document.documentElement.style.setProperty('--wash',t.wash);document.querySelectorAll('.faction').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));document.getElementById('style-label').textContent=t.en+' / '+({judgment:'GOLD',genesis:'CRIMSON',neutral:'CYAN',independent:'VIOLET'}[faction]);const prefix=t.short+'-2053-';if(!fields.serial.value.trim()||/^(JSC|GE|NTR|IND)-2053-/.test(fields.serial.value))fields.serial.value=prefix+'001';draw()}));
+  ids.forEach(id=>fields[id].addEventListener('input',draw));const portrait=document.getElementById('portrait');portrait.addEventListener('change',()=>{const file=portrait.files?.[0];if(!file)return;if(!['image/png','image/jpeg','image/webp'].includes(file.type)){alert('JPG, PNG, WEBP 이미지를 선택해 주세요.');portrait.value='';return}const url=URL.createObjectURL(file),img=new Image();img.onload=()=>{photo=img;document.getElementById('thumb').src=url;draw()};img.onerror=()=>{URL.revokeObjectURL(url);alert('이미지를 열 수 없습니다.');portrait.value=''};img.src=url});
+  document.getElementById('download').addEventListener('click',()=>{draw();const a=document.createElement('a');a.download=`${faction}-${(fields.codename.value.trim()||'identity').replace(/[\\/:*?"<>|]/g,'_')}-id-card.png`;a.href=canvas.toDataURL('image/png');a.click()});
+  document.documentElement.style.setProperty('--accent',themes.judgment.accent);document.documentElement.style.setProperty('--wash',themes.judgment.wash);draw();
+})();
+</script>
+</body>
+</html>
